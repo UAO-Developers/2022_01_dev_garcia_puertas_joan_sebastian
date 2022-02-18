@@ -1,0 +1,39 @@
+h1 {
+    font-size: xx-large;
+}
+
+h2 {
+    font-size: x-large;
+}
+
+h3 {
+    font-size: large;
+}
+
+p, div {
+    text-align: justify;
+}
+
+.leftDiv, .rightDiv {
+    width: 45%;
+    float: left;
+    display: block;
+}
+
+.imgRoundedTen {
+    border-radius: 10px;
+}
+
+li {
+    padding: 1%;
+}
+
+.liDone {
+    background: #CDDC39;
+    color: #212121;
+}
+
+.liPending {
+    background: #FFEB3B;
+    color: #212121;
+}
