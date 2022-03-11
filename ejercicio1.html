@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,
+				initial-scale=1,
+				shrink-to-fit=no">
+    <title>
+        Ejercicio 1
+    </title>
+
+    <!-- Include Bootstrap for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Include the Bootstrap Table CSS
+for the table -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text text-success text-center ">
+            Ejercicio 1
+        </h1>
+        <table class="table-striped border-success my-table">
+            <thead>
+                <tr>
+                    <th data-field="nombre">
+                        <span class="text-success">
+                            Nombre
+                        </span>
+                    </th>
+                    <th data-field="apellido">
+                        <span class="text-success">
+                            Apellido
+                        </span>
+                    </th>
+                    <th data-field="nivel">
+                        <span class="text-success">
+                            Nivel
+                        </span>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <!-- Include jQuery and other required
+files for Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    </script>
+
+    <!-- Include the JavaScript file
+for Bootstrap table -->
+    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            // Use the given data to create
+            // the table and display it
+            $('table').bootstrapTable({
+                data: mydata
+            });
+        });
+
+        $('.my-table').on('click-row.bs.table', onClickCell);
+
+        // Specify the JSON data to be displayed
+        var mydata =
+            [{ "nombre": "Homero", "apellido": "Simpson", "nivel": 5 },
+            { "nombre": "Pepe", "apellido": "El Grillo", "nivel": 3 },
+            { "nombre": "Bugs", "apellido": "Bunny", "nivel": 4 },
+            { "nombre": "James", "apellido": "Rodriguez", "nivel": 1 }];
+
+        function onClickCell(e, row, $element) {
+            if (row.nivel < 3) {
+                $('.custom--red').removeClass('custom--red');
+                $($element).addClass('custom--red');
+            } else {
+                if (row.nivel >= 3 && row.nivel <= 4) {
+                    $('.custom--yellow').removeClass('custom--yellow');
+                    $($element).addClass('custom--yellow');
+                } else {
+                    if (row.nivel > 4) {
+                        $('.custom--green').removeClass('custom--green');
+                        $($element).addClass('custom--green');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
