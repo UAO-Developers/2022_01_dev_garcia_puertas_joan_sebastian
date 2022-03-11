@@ -37,3 +37,15 @@ li {
     background: #FFEB3B;
     color: #212121;
 }
+
+tr.custom--red td {
+    background-color: red !important; /*custom color here add !important if you don't want the hover color*/
+  }
+
+  tr.custom--green td {
+    background-color: green !important; /*custom color here add !important if you don't want the hover color*/
+  }
+
+  tr.custom--yellow td {
+    background-color: yellow !important; /*custom color here add !important if you don't want the hover color*/
+  }
